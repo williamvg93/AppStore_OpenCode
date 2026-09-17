@@ -1,56 +1,62 @@
-# Reglas del Proyecto Store
+# Instrucciones del Proyecto Store
 
-## Idioma y convenciones
+Este archivo define las instrucciones generales que deben seguir los agentes de IA que trabajen en este proyecto.
 
-- La documentación, reglas y explicaciones se redactan en español.
-- Las carpetas técnicas pueden conservar nombres convencionales en inglés.
-- Los módulos y conceptos específicos del dominio utilizan nombres en español.
-- C# utiliza `PascalCase`; TypeScript utiliza `camelCase`.
-- Los componentes Angular siguen el formato `nombre.component.ts`, `.html` y `.scss`.
 
-## Estructura
+## Documentación obligatoria
 
-- `frontend/store-web` contiene el sitio público.
-- `frontend/store-dashboard` contiene la aplicación administrativa.
-- `frontend/shared/store-ui` contiene únicamente UI reutilizable por ambas aplicaciones.
-- `backend` contiene `Store.Api`, `Store.Application`, `Store.Domain` y `Store.Infrastructure`.
-- `database` contiene scripts SQL versionados; no es una base de datos física.
-- `docs` contiene decisiones y documentación arquitectónica.
+Antes de realizar cualquier tarea, el agente debe consultar:
 
-## Arquitectura
+- `docs/context.md`: contexto y objetivo general del proyecto.
+- `docs/rules.md`: reglas y restricciones obligatorias del agente.
+- `docs/arquitectura.md`: arquitectura y decisiones técnicas.
+- `docs/estado-del-proyecto.md`: estado actual y fase de trabajo.
 
-- Mantener una arquitectura simple y evolucionar por fases.
-- Usar componentes Angular standalone, Router, lazy loading, formularios reactivos y SCSS.
-- Los controllers solo coordinan HTTP; la lógica de negocio pertenece a Application o Domain.
-- Application no depende de detalles concretos de Infrastructure.
-- Domain debe mantener el mínimo de dependencias externas.
-- Usar Repository y Unit of Work cuando aporten valor real.
-- No introducir CQRS, MediatR, Event Sourcing, microservicios u otras abstracciones sin necesidad concreta.
+Las reglas de `docs/rules.md` son obligatorias durante toda la sesión.
 
-## Base de datos
-
-- SQL Server es la base de datos objetivo.
-- No usar EF Core Migrations; administrar el esquema con scripts versionados.
-- El agente no se conecta a SQL Server ni ejecuta scripts contra bases reales.
-- El inventario debe conservar trazabilidad mediante movimientos y contemplar lotes cuando corresponda.
-
-## Seguridad y calidad
-
-- Validar en frontend por UX y en backend por seguridad e integridad.
-- Nunca almacenar secretos, contraseñas, claves JWT o credenciales en el código fuente.
-- La autorización real siempre se valida en el backend; los guards del frontend no son suficientes.
-- Mantener errores consistentes y no exponer información interna en producción.
-- Implementar pruebas progresivamente, priorizando reglas de negocio y operaciones críticas.
 
 ## Flujo de trabajo
 
-- Trabajar una fase a la vez: analizar, diseñar, implementar, probar y revisar.
-- Antes de cada tarea revisar esta guía y el código relacionado.
-- No adelantar funcionalidades futuras ni inventar requisitos.
-- Explicar y solicitar aprobación para cambios arquitectónicos importantes.
+- Comprender primero el contexto y el estado actual.
+- Trabajar una fase a la vez.
+- No inventar requisitos.
+- No adelantar funcionalidades de fases posteriores.
+- Antes de realizar cambios importantes, analizar el código relacionado y las decisiones existentes.
+- Los cambios arquitectónicos importantes requieren explicación y aprobación del usuario.
 
-## Git
 
-- El usuario es responsable de todas las operaciones Git.
-- El agente no ejecuta `git add`, `commit`, `push`, `pull`, `fetch`, `merge`, `rebase`, `reset`, `checkout`, `switch`, `branch`, `tag`, `remote`, `clone`, `clean`, `restore` ni comandos `gh`.
-- Solo se permiten operaciones Git de lectura como `status`, `diff`, `log` y `show`.
+## Convenciones
+
+- La documentación y las explicaciones deben redactarse en español.
+- C# utiliza `PascalCase`.
+- TypeScript utiliza `camelCase`.
+- Los conceptos específicos del dominio utilizan nombres en español.
+- Mantener las convenciones y estructura existentes del proyecto.
+
+
+## Restricciones
+
+Las restricciones relacionadas con SQL Server, Git, seguridad y ejecución de comandos están definidas en `docs/rules.md` y deben cumplirse estrictamente.
+
+
+## Frontend
+
+Las reglas de reutilización y diseño de componentes Frontend están definidas en `docs/rules.md`.
+
+Antes de crear una tabla, modal, formulario u otro componente de UI, revisar las reglas de reutilización y evaluar si debe utilizarse o crearse un componente configurable y reutilizable.
+
+
+## Herramientas de documentación
+
+Cuando una tarea requiera consultar documentación técnica externa o verificar APIs específicas de frameworks o librerías, revisar las reglas de uso de Context7 definidas en `docs/rules.md`.
+
+Context7 debe utilizarse de forma selectiva y teniendo en cuenta las versiones utilizadas por el proyecto.
+
+
+## Mantenimiento de documentación
+
+La documentación debe mantenerse sincronizada con el estado real del proyecto.
+
+Después de una tarea, el agente debe evaluar si los cambios requieren actualizar `docs/context.md`, `docs/rules.md`, `docs/arquitectura.md` o `docs/estado-del-proyecto.md`, siguiendo las reglas definidas en `docs/rules.md`.
+
+No debe registrar cambios menores o irrelevantes; la documentación debe contener únicamente información útil para comprender el proyecto, sus decisiones y su estado actual.

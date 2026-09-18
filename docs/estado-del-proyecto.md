@@ -2,48 +2,53 @@
 
 ## Fase actual
 
-El proyecto está en la **Fase 0: Preparación**.
+Fase 2 - Implementación de la base de datos
 
-## Entorno verificado
+## Estado
 
-- Angular CLI `22.1.6`.
-- Node.js `24.20.0`.
-- npm `11.19.0`.
-- .NET SDK `10.0.303`.
+Microfase 2.1 en revisión
 
-## Decisiones iniciales
+## Completado
 
-- Se utiliza la carpeta actual como raíz del repositorio `Store`.
-- Las aplicaciones Angular son independientes y usan standalone components, Router y SCSS.
-- El backend está dividido en cuatro proyectos .NET por responsabilidad.
-- `database/` se reserva para scripts SQL Server versionados.
-- No se configura conexión a una base de datos real en esta fase.
+* Estructura base del proyecto creada.
+* Documentación inicial del proyecto creada.
+* Reglas del agente definidas.
+* Arquitectura inicial definida.
+* Reglas de seguridad, Git, SQL Server y reutilización de componentes Frontend definidas.
+* Reglas para el mantenimiento de la documentación definidas.
 
+## En desarrollo
 
-## Estado actual
+* Revisión y aprobación de los scripts SQL de la microfase 2.1 - Catálogo y terceros.
 
-- Estructura base creada.
-- Store Web creado.
-- Store Dashboard creado.
-- Backend base creado.
-- Estructura de proyectos .NET creada.
-- Carpeta database creada.
-- Documentación inicial creada.
+## Pendiente
 
-## Decisiones realizadas
+* Revisar y aprobar la microfase 2.1.
+* Implementar posteriormente la microfase 2.2 - Inventario y Lotes.
+* Crear posteriormente el backend sobre el modelo de datos definido.
 
-- SQL Server como base de datos.
-- Scripts SQL versionados.
-- No utilizar EF Core Migrations.
-- El agente no ejecuta SQL.
-- El agente no ejecuta Git de modificación.
-- Los comandos Git de consulta requieren confirmación.
+## Decisiones tomadas
 
-## Fuera de alcance
+* El diseño del modelo de datos se realizará antes de implementar el backend.
+* Los scripts SQL serán generados y versionados, pero el agente no podrá ejecutarlos ni conectarse a ninguna base de datos.
+* El backend se construirá sobre el modelo de datos previamente definido y aprobado.
+* El proyecto se desarrollará por fases y microfases, evitando generar grandes cantidades de código en una sola tarea.
+* La documentación debe mantenerse sincronizada con el estado real del proyecto.
+* SQL Server 2022 se adopta como tecnología objetivo de la base de datos y referencia para el diseño y validación de los scripts SQL.
+* El schema principal de la base de datos es `dbo`; las tablas de la Fase 2 se crearán bajo este schema.
+* El cambio a SQL Server 2022 es una decisión tecnológica y documental; no modifica el modelo relacional aprobado.
+* La microfase 2.1 tiene scripts SQL creados para revisión, pero todavía no está aprobada ni completada.
+* Los scripts SQL no han sido ejecutados por el agente.
 
-En esta fase no se implementan productos, clientes, autenticación, inventario, compras, ventas ni reportes.
+## Decisiones pendientes
 
+* Revisar y aprobar los scripts SQL de la microfase 2.1.
+* Diseñar e implementar la microfase 2.2 - Inventario y Lotes, después de la aprobación correspondiente.
 
 ## Próxima fase
 
-Fase 1: Backend Base.
+Fase 2.2 - Inventario y Lotes, después de aprobar la microfase 2.1
+
+## Última actualización
+
+2026-09-18

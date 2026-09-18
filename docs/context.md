@@ -404,9 +404,15 @@ Estos indicadores se implementarán progresivamente y no todos hacen parte de la
 
 ## 18. Base de datos
 
-La base de datos objetivo será SQL Server.
+La base de datos objetivo será SQL Server 2022.
+
+SQL Server 2022 será la versión de referencia para el diseño y la validación de los scripts SQL.
+
+El schema principal de la base de datos será `dbo`. Las tablas de la Fase 2 se crearán bajo este schema, por ejemplo `dbo.Categoria`, `dbo.Marca` y `dbo.Producto`.
 
 El esquema de base de datos será administrado mediante scripts SQL versionados.
+
+No se utilizarán características incompatibles con SQL Server 2022.
 
 No se utilizarán migraciones de Entity Framework Core como mecanismo principal para administrar el esquema de la base de datos.
 

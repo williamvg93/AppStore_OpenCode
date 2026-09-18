@@ -11,6 +11,8 @@ El proyecto está compuesto por:
 - Backend API
 - SQL Server
 
+El modelo de datos se diseñará y aprobará antes de implementar las entidades, repositorios y servicios del backend.
+
 ## 2. Frontend
 
 ### 2.1 Store Web
@@ -113,9 +115,13 @@ Responsabilidades:
 
 ## 4. Persistencia
 
-La base de datos objetivo es SQL Server.
+La base de datos objetivo es SQL Server 2022.
+
+El schema principal de la base de datos es `dbo`. Las tablas de la Fase 2 se crearán bajo este schema.
 
 El proyecto no utiliza EF Core Migrations.
+
+Los scripts SQL deben diseñarse y validarse para SQL Server 2022.
 
 La estructura de la base de datos se administra mediante scripts SQL versionados ubicados en:
 
